@@ -77,20 +77,3 @@ class _TaskPageState extends State<TaskPage> {
     );
   }
 }
-
-class BottomAppBar extends StatelessWidget {
-  final Color color;
-  final Widget child;
-  const BottomAppBar({super.key, required this.color, required this.child});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: BottomAppBar(
-        color: Colors.white,
-        child: bottomAppBarContents,
-      ),
-      floatingActionButton: const FloatingActionButton(onPressed: null),
-    );
-  }
-}
