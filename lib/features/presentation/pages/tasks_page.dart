@@ -9,6 +9,10 @@ class TaskPage extends StatefulWidget {
 }
 
 class _TaskPageState extends State<TaskPage> {
+  int index = 0;
+  late Color selectedItem = Colors.green;
+  Color unSelectedItem = Colors.grey;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -23,10 +27,10 @@ class _TaskPageState extends State<TaskPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Work on time",
+                    "Hi Mary",
                     style: GoogleFonts.damion(
                       fontWeight: FontWeight.bold,
-                      fontSize: 50,
+                      fontSize: 20,
                       color: Colors.grey[900],
                     ),
                   ),
@@ -35,27 +39,58 @@ class _TaskPageState extends State<TaskPage> {
 
                   //subtitle
                   Text(
-                    "Use a to-do list to make the most of your time and accomplish more.",
+                    "Welcome to To do",
                     style: GoogleFonts.damion(
                       fontWeight: FontWeight.w400,
-                      fontSize: 50,
-                      color: Colors.grey[600],
+                      fontSize: 15,
+                      color: Colors.grey[500],
                     ),
                   ),
                 ],
-              )
+              ),
 
               //person
+              Image.asset('assets/man.png'),
             ],
-          )
+          ),
 
           //title
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "My tasks",
+                style: GoogleFonts.damion(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                  color: Colors.grey[900],
+                ),
+              ),
+              const SizedBox(height: 20),
+            ],
+          ),
 
           //tasks list
-
-          //downbar
+          // ListView.builder(itemBuilder: itemBuilder,),
         ],
       ),
+    );
+  }
+}
+
+class BottomAppBar extends StatelessWidget {
+  final Color color;
+  final Widget child;
+  const BottomAppBar({super.key, required this.color, required this.child});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.white,
+        child: bottomAppBarContents,
+      ),
+      floatingActionButton: const FloatingActionButton(onPressed: null),
     );
   }
 }
