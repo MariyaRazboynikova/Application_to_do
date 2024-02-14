@@ -19,7 +19,7 @@ class MyDrawer extends StatelessWidget {
                   child: Icon(
                     Icons.ramen_dining,
                     size: 72,
-                    color: Color.fromARGB(255, 179, 49, 32),
+                    color: Color(0xFF00B2E7),
                   ),
                 ),
               ),
@@ -28,21 +28,21 @@ class MyDrawer extends StatelessWidget {
 
               //shop title
               MyListTile(
-                text: "Shop",
+                text: "Tasks",
                 icon: Icons.home,
                 onTap: () => Navigator.pop(context),
               ),
 
               //cart title
               MyListTile(
-                text: "Cart",
+                text: "Ideas",
                 icon: Icons.shopping_cart,
                 onTap: () {
                   //pop drawer first
                   Navigator.pop(context);
 
                   //go to cart page
-                  Navigator.pushNamed(context, '/cart_page');
+                  Navigator.pushNamed(context, '/ideas_page');
                 },
               ),
               // MyListTile(

@@ -22,36 +22,35 @@ class _TaskPageState extends State<TaskPage> {
         //
         appBar: AppBar(
           backgroundColor: Colors.transparent,
-          title: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              //title
-              Padding(
-                padding: const EdgeInsets.only(
-                  top: 10,
-                ),
-                child: Text(
-                  "Hi Mary",
-                  style: GoogleFonts.farro(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                    color: Colors.grey[900],
+          title: Center(
+            child: Column(
+              children: [
+                //title
+                Padding(
+                  padding: const EdgeInsets.only(
+                    top: 15,
+                  ),
+                  child: Text(
+                    "Hi Mary",
+                    style: GoogleFonts.farro(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                      color: Colors.grey[900],
+                    ),
                   ),
                 ),
-              ),
 
-              const SizedBox(height: 20),
-
-              //subtitle
-              Text(
-                "Welcome to To do",
-                style: GoogleFonts.farro(
-                  fontWeight: FontWeight.w400,
-                  fontSize: 15,
-                  color: Colors.grey[500],
+                //subtitle
+                Text(
+                  "Welcome to To do",
+                  style: GoogleFonts.farro(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 15,
+                    color: Colors.grey[500],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
           actions: [
             //person
@@ -67,19 +66,23 @@ class _TaskPageState extends State<TaskPage> {
           ],
         ),
         drawer: const MyDrawer(),
-        body: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              "My tasks",
-              style: GoogleFonts.farro(
-                fontWeight: FontWeight.bold,
-                fontSize: 30,
-                color: Colors.grey[900],
+
+        body: Padding(
+          padding: const EdgeInsets.only(top: 20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "My tasks",
+                style: GoogleFonts.farro(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 30,
+                  color: Colors.grey[900],
+                ),
               ),
-            ),
-            const SizedBox(height: 20),
-          ],
+              const SizedBox(height: 20),
+            ],
+          ),
         ),
       ),
     ));

@@ -1,3 +1,4 @@
+import 'package:app_to_do/features/presentation/pages/ideas_page.dart';
 import 'package:app_to_do/features/presentation/pages/intro_page.dart';
 import 'package:app_to_do/features/presentation/pages/tasks_page.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/intro_page': (context) => const IntroPage(),
         '/tasks_page': (context) => const TaskPage(),
+        '/ideas_page': (context) => const IdeasPage(),
       },
     );
   }
