@@ -22,39 +22,53 @@ class IntroPage extends StatelessWidget {
           transform: GradientRotation(pi / 4),
         )),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             //image
-            Image.asset('assets/intro.png'),
+            Padding(
+              padding: const EdgeInsets.only(top: 60.0),
+              child: Image.asset('assets/intro.png'),
+            ),
 
             const SizedBox(height: 50),
 
-            Container(
+            SizedBox(
+              height: 300,
               child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(30),
+                      topRight: Radius.circular(30)),
                   color: Colors.white,
                 ),
                 child: Column(children: [
                   //title
-                  Text(
-                    "Work on time",
-                    style: GoogleFonts.damion(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 50,
-                      color: Colors.grey[900],
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20, bottom: 10),
+                    child: Text(
+                      "Work on time",
+                      style: GoogleFonts.farro(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 40,
+                        color: Colors.grey[900],
+                      ),
                     ),
                   ),
 
                   const SizedBox(height: 20),
 
                   //subtitle
-                  Text(
-                    "Use a to-do list to make the most of your time and accomplish more.",
-                    style: GoogleFonts.damion(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 50,
-                      color: Colors.grey[600],
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Center(
+                      child: Text(
+                        "Use a to-do list to make the most of your time and accomplish more.",
+                        style: GoogleFonts.farro(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 20,
+                          color: Colors.grey[600],
+                        ),
+                      ),
                     ),
                   ),
 
@@ -64,8 +78,9 @@ class IntroPage extends StatelessWidget {
                   MyButton(
                     onTap: () => Navigator.pushNamed(context, '/tasks_page'),
                     child: const Icon(
-                      Icons.task,
+                      Icons.task_alt_rounded,
                       color: Colors.white,
+                      size: 50,
                     ),
                   ),
                 ]),

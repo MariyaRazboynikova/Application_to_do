@@ -1,3 +1,4 @@
+import 'package:app_to_do/features/presentation/widgets/my_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -16,64 +17,65 @@ class _TaskPageState extends State<TaskPage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Column(
-        children: [
-          //appbar with person
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: MaterialApp(
+      home: Scaffold(
+        //
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          title: Column(
             children: [
-              //greetings
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Hi Mary",
-                    style: GoogleFonts.damion(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      color: Colors.grey[900],
-                    ),
-                  ),
-
-                  const SizedBox(height: 20),
-
-                  //subtitle
-                  Text(
-                    "Welcome to To do",
-                    style: GoogleFonts.damion(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 15,
-                      color: Colors.grey[500],
-                    ),
-                  ),
-                ],
-              ),
-
-              //person
-              Image.asset('assets/man.png'),
-            ],
-          ),
-
-          //title
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+              //title
               Text(
-                "My tasks",
-                style: GoogleFonts.damion(
+                "Hi Mary",
+                style: GoogleFonts.farro(
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
                   color: Colors.grey[900],
                 ),
               ),
+
               const SizedBox(height: 20),
+
+              //subtitle
+              Text(
+                "Welcome to To do",
+                style: GoogleFonts.farro(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 15,
+                  color: Colors.grey[500],
+                ),
+              ),
             ],
           ),
+          actions: [
+            //person
+            SizedBox(
+              width: 50,
+              height: 50,
+              child: Image.asset(
+                'assets/man.png',
+              ),
+            ),
 
-          //tasks list
-          // ListView.builder(itemBuilder: itemBuilder,),
-        ],
+            //dewider
+          ],
+        ),
+        drawer: const MyDrawer(),
+        body: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              "My tasks",
+              style: GoogleFonts.farro(
+                fontWeight: FontWeight.bold,
+                fontSize: 30,
+                color: Colors.grey[900],
+              ),
+            ),
+            const SizedBox(height: 20),
+          ],
+        ),
       ),
-    );
+    ));
   }
 }
