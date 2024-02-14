@@ -23,14 +23,20 @@ class _TaskPageState extends State<TaskPage> {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           title: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               //title
-              Text(
-                "Hi Mary",
-                style: GoogleFonts.farro(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                  color: Colors.grey[900],
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 10,
+                ),
+                child: Text(
+                  "Hi Mary",
+                  style: GoogleFonts.farro(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    color: Colors.grey[900],
+                  ),
                 ),
               ),
 

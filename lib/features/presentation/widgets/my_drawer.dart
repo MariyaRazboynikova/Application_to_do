@@ -19,7 +19,7 @@ class MyDrawer extends StatelessWidget {
                   child: Icon(
                     Icons.ramen_dining,
                     size: 72,
-                    color: const Color.fromARGB(255, 179, 49, 32),
+                    color: Color.fromARGB(255, 179, 49, 32),
                   ),
                 ),
               ),
