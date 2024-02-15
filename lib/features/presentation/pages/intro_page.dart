@@ -26,14 +26,18 @@ class IntroPage extends StatelessWidget {
           children: [
             //image
             Padding(
-              padding: const EdgeInsets.only(top: 60.0),
-              child: Image.asset('assets/intro.png'),
+              padding: const EdgeInsets.only(top: 80.0),
+              child: SizedBox(
+                width: 300,
+                height: 300,
+                child: Image.asset('assets/intro.png'),
+              ),
             ),
 
             const SizedBox(height: 50),
 
             SizedBox(
-              height: 300,
+              height: 350,
               child: Container(
                 decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(
@@ -55,7 +59,7 @@ class IntroPage extends StatelessWidget {
                     ),
                   ),
 
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 10),
 
                   //subtitle
                   Padding(
@@ -72,7 +76,7 @@ class IntroPage extends StatelessWidget {
                     ),
                   ),
 
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 50),
 
                   //buttom
                   MyButton(

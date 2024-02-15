@@ -1,4 +1,6 @@
 import 'package:app_to_do/features/data/models/drawer_my_list.dart';
+import 'package:app_to_do/features/presentation/pages/ideas_page.dart';
+import 'package:app_to_do/features/presentation/pages/tasks_page.dart';
 import 'package:flutter/material.dart';
 
 class MyDrawer extends StatelessWidget {
@@ -17,7 +19,7 @@ class MyDrawer extends StatelessWidget {
               const DrawerHeader(
                 child: Center(
                   child: Icon(
-                    Icons.ramen_dining,
+                    Icons.note_alt_rounded,
                     size: 72,
                     color: Color(0xFF00B2E7),
                   ),
@@ -26,48 +28,46 @@ class MyDrawer extends StatelessWidget {
 
               const SizedBox(height: 5),
 
-              //shop title
+              //task title
               MyListTile(
                 text: "Tasks",
-                icon: Icons.home,
-                onTap: () => Navigator.pop(context),
-              ),
-
-              //cart title
-              MyListTile(
-                text: "Ideas",
-                icon: Icons.shopping_cart,
+                icon: Icons.note_add_outlined,
                 onTap: () {
                   //pop drawer first
                   Navigator.pop(context);
 
-                  //go to cart page
-                  Navigator.pushNamed(context, '/ideas_page');
+                  //go to ideas page
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return const TaskPage();
+                      },
+                    ),
+                  );
                 },
               ),
-              // MyListTile(
-              //   text: "Settings",
-              //   icon: Icons.settings,
-              //   onTap: () {
-              //     //pop drawer first
-              //     Navigator.pop(context);
 
-              //     //go to cart page
-              //     Navigator.pushNamed(context, '/settings_page');
-              //   },
-              // ),
+              //ideas title
+              MyListTile(
+                text: "Ideas",
+                icon: Icons.star_border_sharp,
+                onTap: () {
+                  //pop drawer first
+                  Navigator.pop(context);
+
+                  //go to ideas page
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return const IdeasPage();
+                      },
+                    ),
+                  );
+                },
+              ),
             ],
-          ),
-
-          //exit shop title
-          Padding(
-            padding: const EdgeInsets.only(bottom: 30.0),
-            child: MyListTile(
-              text: "Exit",
-              icon: Icons.logout,
-              onTap: () => Navigator.pushNamedAndRemoveUntil(
-                  context, '/intro_page', (route) => false),
-            ),
           ),
         ],
       ),
