@@ -12,6 +12,28 @@ class TaskPage extends StatefulWidget {
 }
 
 class _TaskPageState extends State<TaskPage> {
+  //список задач
+  List toDoList = [
+    ["Make tutorial", 'Выполнить до: ', false],
+    ["Do exercise", 'Выполнить до: ', false],
+  ];
+
+  //chekbox was tapped
+  void checkboxChanged(bool? value, int index) {
+    setState(() {
+      toDoList[index][2] = !toDoList[index][2];
+    });
+  }
+
+  void crateNewTask() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const AddTask();
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -84,34 +106,23 @@ class _TaskPageState extends State<TaskPage> {
 
               //список
               Expanded(
-                child: ListView(
-                  children: [
-                    ToDoTasks(
-                      taskName: 'taskName',
-                      date: 'date',
-                      isCompleted: false,
-                      onChanged: (p0) {},
-                    ),
-                    ToDoTasks(
-                      taskName: 'taskName',
-                      date: 'date',
-                      isCompleted: true,
-                      onChanged: (p0) {},
-                    ),
-                    ToDoTasks(
-                      taskName: 'taskName',
-                      date: 'date',
-                      isCompleted: false,
-                      onChanged: (p0) {},
-                    ),
-                  ],
+                child: ListView.builder(
+                  itemCount: toDoList.length,
+                  itemBuilder: (context, index) {
+                    return ToDoTasks(
+                      taskName: toDoList[index][0],
+                      date: toDoList[index][1],
+                      isCompleted: toDoList[index][2],
+                      onChanged: (value) => checkboxChanged(value, index),
+                    );
+                  },
                 ),
               )
             ],
           ),
           floatingActionButton: FloatingActionButton(
             backgroundColor: const Color(0xFFE064F7),
-            onPressed: () => const AddTask(),
+            onPressed: crateNewTask,
             child: const Icon(
               Icons.add,
               color: Color.fromARGB(255, 255, 255, 255),

@@ -25,17 +25,14 @@ class _AddTaskState extends State<AddTask> {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
-        backgroundColor: Theme.of(context).colorScheme.background,
-        appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.background,
-        ),
+        backgroundColor: Colors.pink[100],
         body: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const Text(
-                'add expenses',
+                'Add Task',
                 style: TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.w500,
@@ -45,7 +42,7 @@ class _AddTaskState extends State<AddTask> {
               const SizedBox(height: 18),
 
               SizedBox(
-                width: MediaQuery.of(context).size.width * 0.7,
+                width: MediaQuery.of(context).size.width,
 
                 //тектовое поле
                 child: TextFormField(
@@ -54,11 +51,6 @@ class _AddTaskState extends State<AddTask> {
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.white,
-                    prefix: Icon(
-                      Icons.money_sharp,
-                      size: 16,
-                      color: Colors.grey[500],
-                    ),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
                         borderSide: BorderSide.none),
@@ -99,7 +91,7 @@ class _AddTaskState extends State<AddTask> {
                     size: 16,
                     color: Colors.grey[500],
                   ),
-                  label: const Text("Date"),
+                  label: const Text("Выполнить до: "),
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(18),
                       borderSide: BorderSide.none),
@@ -109,21 +101,26 @@ class _AddTaskState extends State<AddTask> {
               const SizedBox(height: 16),
 
               //кнопка сохранения
-              SizedBox(
-                width: double.infinity,
-                height: kToolbarHeight,
-                child: TextButton(
-                  onPressed: () {},
-                  style: TextButton.styleFrom(
-                      backgroundColor: Colors.black,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      )),
-                  child: const Text(
-                    'save',
-                    style: TextStyle(
-                      fontSize: 22,
-                      color: Colors.white,
+              Container(
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black),
+                    borderRadius: BorderRadius.circular(20)),
+                child: SizedBox(
+                  width: double.infinity,
+                  height: kToolbarHeight,
+                  child: TextButton(
+                    onPressed: () {},
+                    style: TextButton.styleFrom(
+                        backgroundColor: Colors.transparent,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        )),
+                    child: const Text(
+                      'Save',
+                      style: TextStyle(
+                        fontSize: 30,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),

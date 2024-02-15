@@ -6,14 +6,14 @@ class ToDoTasks extends StatelessWidget {
   final String date;
   final Function(bool?)? onChanged;
   final bool isCompleted;
-  final Function()? onPressed;
+  // final Function()? onPressed;
   const ToDoTasks({
     super.key,
     required this.taskName,
     required this.date,
     this.onChanged,
     required this.isCompleted,
-    this.onPressed,
+    // this.onPressed,
   });
 
   @override
@@ -30,6 +30,7 @@ class ToDoTasks extends StatelessWidget {
                 Checkbox(
                   value: isCompleted,
                   onChanged: onChanged,
+                  activeColor: const Color(0xFFE064F7),
                 ),
 
                 const SizedBox(width: 10),
@@ -42,9 +43,9 @@ class ToDoTasks extends StatelessWidget {
                     children: [
                       Text(
                         taskName,
-                        style: GoogleFonts.daiBannaSil(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 20,
+                        style: GoogleFonts.farro(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17,
                           color: Colors.grey[900],
                         ),
                       ),
@@ -62,14 +63,14 @@ class ToDoTasks extends StatelessWidget {
               ],
             ),
 
-            //trailing
-            IconButton(
-              onPressed: () => showDialog,
-              icon: const Icon(
-                Icons.more_vert,
-                color: Color(0xFF00B2E7),
-              ),
-            ),
+            // //trailing
+            // IconButton(
+            //   onPressed: () => showDialog,
+            //   icon: const Icon(
+            //     Icons.more_vert,
+            //     color: Color(0xFF00B2E7),
+            //   ),
+            // ),
           ],
         ),
       ),
