@@ -82,7 +82,7 @@ class IntroPage extends StatelessWidget {
                   MyButton(
                     onTap: () => Navigator.pushNamed(context, '/tasks_page'),
                     child: const Icon(
-                      Icons.task_alt_rounded,
+                      Icons.arrow_right_alt_rounded,
                       color: Colors.white,
                       size: 50,
                     ),
