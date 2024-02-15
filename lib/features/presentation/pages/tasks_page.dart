@@ -1,3 +1,4 @@
+import 'package:app_to_do/features/presentation/cotroller/task_controller.dart';
 import 'package:app_to_do/features/presentation/widgets/add_task.dart';
 import 'package:app_to_do/features/presentation/widgets/my_drawer.dart';
 import 'package:app_to_do/features/presentation/widgets/to_do_list.dart';
@@ -18,6 +19,8 @@ class _TaskPageState extends State<TaskPage> {
     ["Do exercise", 'Выполнить до: ', false],
   ];
 
+
+
   //chekbox was tapped
   void checkboxChanged(bool? value, int index) {
     setState(() {
@@ -29,7 +32,9 @@ class _TaskPageState extends State<TaskPage> {
     showDialog(
       context: context,
       builder: (context) {
-        return const AddTask();
+        return const AddTask(
+          controller: ,
+        );
       },
     );
   }
