@@ -16,14 +16,14 @@ class _TaskPageState extends State<TaskPage> {
 
   //список задач
   List toDoList = [
-    ["Make tutorial", 'Выполнить до: ', false],
-    ["Do exercise", 'Выполнить до: ', false],
+    ["Make tutorial", false],
+    ["Do exercise", false],
   ];
 
   //chekbox was tapped
   void checkboxChanged(bool? value, int index) {
     setState(() {
-      toDoList[index][2] = !toDoList[index][2];
+      toDoList[index][1] = !toDoList[index][1];
     });
   }
 
@@ -31,10 +31,10 @@ class _TaskPageState extends State<TaskPage> {
     showDialog(
       context: context,
       builder: (context) {
-        return AddTask(
+        return DialogBox(
           controller: _controller,
           onSave: () {},
-          onCancel: () => Navigator.of(context).pop(),
+          onCancel: () {},
         );
       },
     );
@@ -117,8 +117,7 @@ class _TaskPageState extends State<TaskPage> {
                   itemBuilder: (context, index) {
                     return ToDoTasks(
                       taskName: toDoList[index][0],
-                      date: toDoList[index][1],
-                      isCompleted: toDoList[index][2],
+                      isCompleted: toDoList[index][1],
                       onChanged: (value) => checkboxChanged(value, index),
                     );
                   },
