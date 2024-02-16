@@ -14,7 +14,9 @@ class Button extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialButton(
       onPressed: onPressed,
-      color: Colors.grey[200],
+      color: Colors.white,
+      elevation: 0,
+      padding: const EdgeInsets.fromLTRB(30, 10, 30, 10),
       child: Text(
         text,
         style: GoogleFonts.farro(

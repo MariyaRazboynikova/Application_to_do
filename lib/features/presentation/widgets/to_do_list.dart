@@ -3,14 +3,12 @@ import 'package:google_fonts/google_fonts.dart';
 
 class ToDoTasks extends StatelessWidget {
   final String taskName;
-  final String date;
   final Function(bool?)? onChanged;
   final bool isCompleted;
   // final Function()? onPressed;
   const ToDoTasks({
     super.key,
     required this.taskName,
-    required this.date,
     this.onChanged,
     required this.isCompleted,
     // this.onPressed,
@@ -47,14 +45,6 @@ class ToDoTasks extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                           fontSize: 17,
                           color: Colors.grey[900],
-                        ),
-                      ),
-                      Text(
-                        "Выполнить до: $date",
-                        style: GoogleFonts.farro(
-                          fontWeight: FontWeight.w300,
-                          fontSize: 15,
-                          color: Colors.grey[600],
                         ),
                       ),
                     ],
