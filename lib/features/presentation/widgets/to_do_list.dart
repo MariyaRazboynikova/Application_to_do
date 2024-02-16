@@ -5,12 +5,14 @@ class ToDoTasks extends StatelessWidget {
   final String taskName;
   final Function(bool?)? onChanged;
   final bool isCompleted;
+  Function(BuildContext)? deleteFunction;
   // final Function()? onPressed;
-  const ToDoTasks({
+  ToDoTasks({
     super.key,
     required this.taskName,
     this.onChanged,
     required this.isCompleted,
+    this.deleteFunction,
     // this.onPressed,
   });
 
@@ -46,6 +48,12 @@ class ToDoTasks extends StatelessWidget {
                           fontSize: 17,
                           color: Colors.grey[900],
                         ),
+                      ),
+
+                      //icon delete
+                      IconButton(
+                        onPressed: () => deleteFunction,
+                        icon: const Icon(Icons.delete),
                       ),
                     ],
                   ),

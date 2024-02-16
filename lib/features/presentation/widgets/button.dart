@@ -12,11 +12,9 @@ class Button extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialButton(
+    return OutlinedButton(
       onPressed: onPressed,
-      color: Colors.white,
-      elevation: 0,
-      padding: const EdgeInsets.fromLTRB(30, 10, 30, 10),
+      style: ButtonStyle(),
       child: Text(
         text,
         style: GoogleFonts.farro(
