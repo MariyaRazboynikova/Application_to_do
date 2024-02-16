@@ -1,6 +1,6 @@
-import 'package:app_to_do/features/data/models/drawer_my_list.dart';
 import 'package:app_to_do/features/presentation/pages/ideas_page.dart';
 import 'package:app_to_do/features/presentation/pages/tasks_page.dart';
+import 'package:app_to_do/features/presentation/widgets/drawer_my_list.dart';
 import 'package:flutter/material.dart';
 
 class MyDrawer extends StatelessWidget {

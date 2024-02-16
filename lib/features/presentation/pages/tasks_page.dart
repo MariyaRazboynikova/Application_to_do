@@ -1,4 +1,3 @@
-import 'package:app_to_do/features/presentation/cotroller/task_controller.dart';
 import 'package:app_to_do/features/presentation/widgets/add_task.dart';
 import 'package:app_to_do/features/presentation/widgets/my_drawer.dart';
 import 'package:app_to_do/features/presentation/widgets/to_do_list.dart';
@@ -13,13 +12,13 @@ class TaskPage extends StatefulWidget {
 }
 
 class _TaskPageState extends State<TaskPage> {
+  final _controller = TextEditingController();
+
   //список задач
   List toDoList = [
     ["Make tutorial", 'Выполнить до: ', false],
     ["Do exercise", 'Выполнить до: ', false],
   ];
-
-
 
   //chekbox was tapped
   void checkboxChanged(bool? value, int index) {
@@ -32,8 +31,10 @@ class _TaskPageState extends State<TaskPage> {
     showDialog(
       context: context,
       builder: (context) {
-        return const AddTask(
-          controller: ,
+        return AddTask(
+          controller: _controller,
+          onSave: () {},
+          onCancel: () => Navigator.of(context).pop(),
         );
       },
     );
