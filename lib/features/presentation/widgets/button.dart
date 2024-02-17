@@ -14,7 +14,7 @@ class Button extends StatelessWidget {
   Widget build(BuildContext context) {
     return OutlinedButton(
       onPressed: onPressed,
-      style: ButtonStyle(),
+      style: const ButtonStyle(),
       child: Text(
         text,
         style: GoogleFonts.farro(
