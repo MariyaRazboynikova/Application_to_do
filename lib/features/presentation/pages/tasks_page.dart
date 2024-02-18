@@ -104,7 +104,7 @@ class _TaskPageState extends State<TaskPage> {
                     "Welcome to To do",
                     style: GoogleFonts.farro(
                       fontWeight: FontWeight.w400,
-                      fontSize: 20,
+                      fontSize: 15,
                       color: Colors.grey[500],
                     ),
                   ),
