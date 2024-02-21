@@ -65,11 +65,34 @@ class _TaskPageState extends State<TaskPage> {
     );
   }
 
-  // delete task
-  void deleteTask(int index) {
-    setState(() {
-      db.toDoList.removeAt(index);
-    });
+  void removeTask(int index) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        content: const Text("Удалить эту задачу?"),
+        actions: [
+          //cancel button
+          MaterialButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('Закрыть'),
+          ),
+
+          //yes button
+          MaterialButton(
+            onPressed: () {
+              //pop dialog box
+              Navigator.pop(context);
+              // delete task
+              setState(() {
+                db.toDoList.removeAt(index);
+              });
+              db.updateDataBase();
+            },
+            child: const Text('Да'),
+          ),
+        ],
+      ),
+    );
     db.updateDataBase();
   }
 
@@ -152,7 +175,7 @@ class _TaskPageState extends State<TaskPage> {
                       taskName: db.toDoList[index][0],
                       isCompleted: db.toDoList[index][1],
                       onChanged: (value) => checkBoxChanged(value, index),
-                      deleteFunction: (context) => deleteTask,
+                      onPressed: () => removeTask(index),
                     );
                   },
                 ),
