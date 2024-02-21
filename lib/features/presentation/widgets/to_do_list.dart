@@ -7,7 +7,7 @@ class ToDoTasks extends StatelessWidget {
   final bool isCompleted;
   final Function()? onPressed;
   // final Function()? onPressed;
-  ToDoTasks({
+  const ToDoTasks({
     super.key,
     required this.taskName,
     this.onChanged,
